@@ -1,3 +1,9 @@
+package TransacaoBancaria.service;
+
+
+import TransacaoBancaria.model.Cliente;
+import TransacaoBancaria.repository.IConta;
+
 
 public abstract class Conta implements IConta {
 	
@@ -15,22 +21,6 @@ public abstract class Conta implements IConta {
 		this.cliente = cliente;
 	}
 
-	@Override
-	public void sacar(double valor) {
-		saldo -= valor;
-	}
-
-	@Override
-	public void depositar(double valor) {
-		saldo += valor;
-	}
-
-	@Override
-	public void transferir(double valor, IConta contaDestino) {
-		this.sacar(valor);
-		contaDestino.depositar(valor);
-	}
-
 	public int getAgencia() {
 		return agencia;
 	}
@@ -41,6 +31,10 @@ public abstract class Conta implements IConta {
 
 	public double getSaldo() {
 		return saldo;
+	}
+
+	public void setSaldo(int valor) {
+		saldo += valor;
 	}
 
 	protected void imprimirInfosComuns() {

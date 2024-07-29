@@ -1,3 +1,4 @@
+package TransacaoBancaria.repository;
 
 public interface IConta {
 	
