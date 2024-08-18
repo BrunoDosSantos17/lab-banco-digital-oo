@@ -1,13 +1,32 @@
 package TransacaoBancaria.model;
 
 
-import lombok.Setter;
-import lombok.Getter;
+import lombok.*;
 
+
+@RequiredArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Setter
 public class Cliente {
 
-	private String nome;
+	@NonNull
+	private String name;
+	@NonNull
+	private String lastName;
+	@NonNull
+	private String street;
+
+	Banco banco;
+
+	public String cadastrarNoBanco(String nomeBanco) {
+		banco = new Banco(nomeBanco, name, lastName, street);
+		return "Cadastro bem sucedido";
+	}
+
+
+
+
+
+
 
 }
