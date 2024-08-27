@@ -5,7 +5,6 @@ import lombok.*;
 
 
 @RequiredArgsConstructor
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class Cliente {
 
@@ -15,13 +14,6 @@ public class Cliente {
 	private String lastName;
 	@NonNull
 	private String street;
-
-	Banco banco;
-
-	public String cadastrarNoBanco(String nomeBanco) {
-		banco = new Banco(nomeBanco, name, lastName, street);
-		return "Cadastro bem sucedido";
-	}
 
 
 
